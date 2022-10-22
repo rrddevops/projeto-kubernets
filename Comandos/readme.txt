@@ -224,9 +224,13 @@ kubectl get nodes
 
 docker container ls
 
-
-
   https://github.com/KubeDev/kube-news
   docker build -t rodrigordavila/kube-news:v1 .
+
+  
+  kubectl delete deploy <deployment name>
+  sudo kubectl get deployments
+  sudo kubectl get services
+  sudo kubectl delete svc web-page
 
   
