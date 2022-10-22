@@ -8,7 +8,7 @@ terraform {
 }
 
 provider "digitalocean" {
-  token = ""
+  token = "dop_v1_5639a0908e22c1cfe4d9660a202d2325bd35037edcdae5ed6f268c5b784fce6b"
 }
 
 # Create a new Web Droplet in the nyc2 region
