@@ -14,6 +14,7 @@ As oito fases do ciclo DevOps
 
 Plan – Code – Build – Test – Release – Deploy – Operate – Monitor
 
+##########################################################################################
 Docker
 
 Comandos
@@ -41,11 +42,6 @@ docker container run -d -p 5432:5432 -e POSTGRES_PASSWORD=senha -e POSTGRES_USER
 docker container ls
 
 usar o Dbeaver para acessar o banco de dados ou ate mesmo o terminal ubuntu
-
-
-
-
-
 
 Criar imagem de container
 
@@ -142,6 +138,9 @@ docker container run -d -p 8080:8080 rodrigordavila/conversao-temperatura
 
 OBS: Sempre versionar as imagens e sempre usar uma versão especifica da imagem que está sendo usada como base.
 
+###################################################################################
+Kubernets 
+
 install k3d
 install kubectl 
 
@@ -233,4 +232,5 @@ docker container ls
   sudo kubectl get services
   sudo kubectl delete svc web-page
 
-  
+ ################################################################3
+ Terraform
