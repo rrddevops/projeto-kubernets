@@ -25,6 +25,7 @@ spec:
             value: "Pg#123"
 
 ---
+
 apiVersion: v1
 kind: Service
 metadata:
@@ -37,6 +38,7 @@ spec:
   type: ClusterIP
 
 --- 
+
 apiVersion: apps/v1
 kind: Deployment
 metadata:
@@ -65,6 +67,7 @@ spec:
           - name: DB_HOST 
             value: "postgre"
 ---
+
 apiVersion: v1
 kind: Service
 metadata:
