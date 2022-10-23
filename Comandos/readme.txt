@@ -14,6 +14,8 @@ As oito fases do ciclo DevOps
 
 Plan – Code – Build – Test – Release – Deploy – Operate – Monitor
 
+https://badgr.com/public/assertions/jdeLqI-gTkGPFA-ytDiQMg?action=download
+
 ##########################################################################################
 Docker
 
@@ -232,5 +234,83 @@ docker container ls
   sudo kubectl get services
   sudo kubectl delete svc web-page
 
- ################################################################3
- Terraform
+################################################################
+Terraform
+ 
+https://www.terraform.io/	 
+
+https://registry.terraform.io/browse/providers
+
+https://registry.terraform.io/providers/hashicorp/aws/latest/docs 	
+
+https://registry.terraform.io/providers/hashicorp/aws/latest/docs/resources/instance
+
+
+terraform init
+terraform validate
+terraform plan
+terraform apply
+terraform destroy
+
+Dependencia implicita - declaração do valor necessário para aplicar um determinado um recurso. Para inseririr um EIP precisamos informar o ID da instância.
+
+Dependencia explicita - antes de subir um recurso preciso que outro esteja no ar.
+depends_on = exemplo uma EC2 precisa de um disco EFS.
+
+Recursos não dependentes - Melhores práticas não usar o dependencia explicita sem necessidade, pq o terraform trabalha com multi theads simultaneas
+
+Prvisionadores locais - file, local exec e remote exec. 
+File - Ele copiará um arquivo local para o destino via ssh ou winrm. 
+Local exec dispara um comando na maquina 
+Remote exec executará o comando na maquina remota
+
+O ideal é sempre usar os recursos do provedor como o exemplo do user data no momento de subir uma instancia. 
+
+
+ 
+ 
+####################################################################
+Jenkins, digital ocean
+ 
+ 
+apt update
+apt install openjdk-17-jdk -y
+curl -fsSL https://pkg.jenkins.io/debian-stable/jenkins.io.key | sudo tee /usr/share/keyrings/jenkins-keyring.asc > /dev/null 
+echo deb [signed-by=/usr/share/keyrings/jenkins-keyring.asc]   https://pkg.jenkins.io/debian-stable binary/ | sudo tee  /etc/apt/sources.list.d/jenkins.list > /dev/null
+sudo apt-get update
+sudo apt-get install jenkins
+
+sudo apt install apt-transport-https curl gnupg-agent ca-certificates software-properties-common -y
+curl -fsSL https://download.docker.com/linux/ubuntu/gpg | sudo apt-key add -
+sudo add-apt-repository "deb [arch=amd64] https://download.docker.com/linux/ubuntu focal stable"
+sudo apt install docker-ce docker-ce-cli containerd.io -y
+sudo usermod -aG docker jenkins
+newgrp docker
+docker version
+reset jenkins
+systemctl restart jenkins
+systemctl statusjenkins
+
+sudo apt-get update
+sudo apt-get install -y ca-certificates curl
+sudo apt-get install -y apt-transport-https
+sudo curl -fsSLo /usr/share/keyrings/kubernetes-archive-keyring.gpg https://packages.cloud.google.com/apt/doc/apt-key.gpg
+echo "deb [signed-by=/usr/share/keyrings/kubernetes-archive-keyring.gpg] https://apt.kubernetes.io/ kubernetes-xenial main" | sudo tee /etc/apt/sources.list.d/kubernetes.list
+sudo apt-get update
+sudo apt-get install -y kubectl
+
+Extensões:
+Docker plugin
+Docker Pipeline
+kubernets-cli
+
+
+
+####################################################################
+Protmetheus e Grafana
+
+
+kubectl --kubeconfig=/home/rodrigo/projeto_devops_fabricio/kube_config.yaml get secret grafana -o jsonpath="{.data.admin-password}" | base64 --decode ; echo
+
+
+https://grafana.com/grafana/dashboards/?search=node
